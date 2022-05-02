@@ -1,0 +1,39 @@
+section.section.hero
+	.hero__top
+		.hero__title
+			p Лугинино
+			p Парк
+		.hero__arrow_down
+			+icon('angle_arrow_down', 'icon--size_mod')
+	.hero__cloud.hero__cloud--left_mod
+		+picture({
+			img: 'left_cloud',
+			class: 'hero__cloud_picture',
+			img_class: 'hero__cloud_img',
+			png: true,
+		})
+	.hero__cloud.hero__cloud--right_mod
+		+picture({
+			img: 'right_cloud',
+			class: 'hero__cloud_picture',
+			img_class: 'hero__cloud_img',
+			png: true,
+		})
+	.hero__bottom
+		.hero__bottom_house
+			+picture({
+				img: 'hero_house',
+				class: '.hero__bottom_house_picture',
+				img_class: 'hero__bottom_house_img',
+				png: true
+			})
+		.hero__bottom_meta
+			.hero__bottom_meta_in
+				.hero__bottom_tags
+					.tag.tag--accent_1 Ипотека от 5%
+					.tag.tag--accent_2 Ленинградское шоссе — 1 км от г. Зеленоград
+				.hero__bottom_price_and_button
+					.hero__bottom_price
+						.hero__bottom_price_label стоимость
+						.hero__bottom_price_quantity от 3 млн рублей
+					button.accent_button.hero__bottom_button(type="button") Оставить заявку
