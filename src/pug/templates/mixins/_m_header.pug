@@ -1,2 +1,70 @@
+-
+	const main_nav = {
+		first_list: {
+			items: [
+				{
+					text: 'О проекте',
+				},
+				{
+					text: 'Выбор проекта',
+				},
+				{
+					text: 'Генплан',
+				},
+				{
+					text: 'Акции',
+				},
+				{
+					text: 'Расположение',
+				},
+			],
+		},
+		second_list: {
+			items: [
+				{
+					text: 'Фото',
+				},
+				{
+					text: 'Ипотека',
+				},
+				{
+					text: 'Новости',
+				},
+				{
+					text: 'Контакты',
+				},
+			],
+		},
+	};
+
 mixin header
 	header.header
+		.header__in
+			a.logo.header__logo(href="#")
+				img.logo__img(src=`${assetsImage}logo.svg`, alt="Логотип")
+			a.outlined_button.header__phone_button(href="tel:+88005553535") 8 800 555 35 35
+			button.accent_button.header__cta_button(type="button") Оставить заявку
+		.menu_trigger.header__menu_trigger.menuTrigger
+				.menu_trigger__decor
+		.menu
+			.menu__main
+				.menu__main_in
+					.menu__buttons
+						.menu__buttons_in
+							.menu__button
+								a.outlined_button(href="tel:+88005553535") 8 800 555 35 35
+							.menu__button
+								button.accent_button(type="button") Оставить заявку
+					nav.main_nav.menu__main_nav
+						.main_nav__column
+							ul.main_nav__list
+								each item in main_nav.first_list.items
+									li.main_nav__item
+										a.main_nav__link(href="#")= item.text
+						.main_nav__column
+							ul.main_nav__list
+								each item in main_nav.second_list.items
+									li.main_nav__item
+										a.main_nav__link(href="#")= item.text
+			.menu__left_bar
+			.menu__title Лугинино парк

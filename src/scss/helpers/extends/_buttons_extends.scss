@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @mixin st_btn() {
 	display: inline-flex;
 	justify-content: center;
@@ -14,28 +16,66 @@
 
 }
 
-//color extends
-%blue_btn_1 {
-	font-weight: 700;
+%button_theme_1 {
+	@extend %transition_background;
+
 	color: $white;
-	background-color: $color_link_base;
-	transition: background-color .3s ease;
+
+	background: $accent;
 
 	@include st_btn();
 
-	&:hover {
-		background-color: darken($color_link_base, 10%);
+	&:hover,
+	&:focus {
+		background: color.adjust($accent, $lightness: 5%);
 	}
 
+	&:active {
+		background: color.adjust($accent, $lightness: -5%);
+	}
 }
 
-//size extends
-%btn_size_1 {
-	height: 4rem;
-	padding: 0 1.2rem;
+%button_theme_2 {
+	color: $white;
 
-	line-height: 4rem;
-	font-size: 1.6rem;
+	border-color: $white;
+	border-style: solid;
 
-	border-radius: $gl_radius;
+	transition: color .3s ease, background .3s ease;
+	will-change: color, background;
+
+	@include st_btn();
+
+	&:hover,
+	&:focus {
+		color: $black;
+
+		background: $white;
+	}
+
+	&:active {
+		color: $accent;
+
+		background: $white;
+	}
+}
+
+%button_size_1,
+%button_size_2 {
+	min-width: 21rem;
+	min-height: 5.8rem;
+
+	font-size: 2rem;
+
+	border-radius: 3rem;
+}
+
+%button_size_1 {
+	line-height: 5.8rem;
+}
+
+%button_size_2 {
+	line-height: calc(5.8rem - 2 * 2px);
+
+	border-width: 2px;
 }

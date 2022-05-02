@@ -1,17 +1,413 @@
+//------------------------------------------------------------menu_trigger
+@mixin menu_trgger_line {
+	position: absolute;
+	top: 50%;
+	left: 0;
+
+	margin-top: -.2rem;
+	width: 100%;
+	height: .4rem;
+
+	background: $white;
+}
+
+.menu_trigger {
+	position: absolute;
+	top: 50%;
+	left: var(--gl-indent);
+	z-index: z-index(menu_trigger);
+
+	height: 2.6rem;
+	width: 3.2rem;
+	margin-top: -0.6rem;
+
+	cursor: pointer;
+
+	&:before,
+	&:after {
+		content: '';
+		will-change: transform;
+
+		@include menu_trgger_line;
+
+		@include bp($point_1, min) {
+			transition: transform .3s ease .8s;
+		}
+
+		@include bp($point_1 - 1) {
+			transition: transform .3s ease .5s;
+		}
+		
+		@include bp($point_4 - 1) {
+			transition: transform .3s ease;
+		}
+	}
+
+	&:before {
+		transform: translate(0, -1rem);
+	}
+
+	&:after {
+		transform: translate(0, 1rem);
+	}
+	
+	&.menu_trigger--active_mod {
+		&:before,
+		&:after {
+			transition: transform .3s ease;
+		}
+
+		&:before {
+			transform: (rotate(45deg) translate(0, 0));
+		}
+
+		&:after {
+			transform: (rotate(-45deg) translate(0, 0));
+		}
+	}
+}
+
+.menu_trigger__decor {
+	will-change: opacity, transform;
+
+	@include bp($point_1, min) {
+		transition: opacity .3s ease .8s, transform .3s ease .8s;
+	}
+
+	@include bp($point_1 - 1) {
+		transition: opacity .3s ease .5s, transform .3s ease .5s;
+	}
+
+	@include bp($point_4 - 1) {
+		transition: opacity .3s ease, transform .3s ease;
+	}
+
+	.menu_trigger--active_mod & {
+		opacity: 0;
+		transform: translate(-100%, 0);
+
+		transition: opacity .3s ease, transform .3s ease;
+	}
+
+	@include menu_trgger_line;
+}
+
+//------------------------------------------------------------menu_trigger###
+
+//------------------------------------------------------------logo
+.logo {
+	display: block;
+}
+
+.logo__img {
+	@extend %contain_img;
+}
+
+//------------------------------------------------------------logo###
+
+//------------------------------------------------------------nav
+.main_nav {
+	@extend %global_flex_block_row_nowrap_flex-start;
+
+	@include bp($point_1 - 1) {
+		flex-wrap: wrap;
+	}
+}
+
+.main_nav__column {
+	max-width: 61.6rem;
+}
+
+.main_nav__list {
+	@extend %global_flex_block_row_wrap_flex-start;
+}
+
+.main_nav__item {
+	width: 100%;
+
+	@include bp($point_4, min) {
+		margin-bottom: 4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		margin-bottom: 2rem;
+	}
+
+	@include bp($point_7 - 1) {
+		margin-bottom: 1rem;
+	}
+}
+
+.main_nav__link {
+	position: relative;
+
+	display: block;
+
+	font-weight: 700;
+	font-family: $font_2;
+	color: $white;
+	text-transform: uppercase;
+
+	@include bp($point_4 - 1, min) {
+		font-size: 7.2rem;
+		line-height: 8.2rem;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 5rem;
+		line-height: 6rem;
+	}
+
+	@include bp($point_7 - 1) {
+		font-size: 4rem;
+		line-height: 5rem;
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+
+		&::before {
+			opacity: 1;
+			transform: skewY(-13deg);
+		}
+	}
+
+	&::before {
+		position: absolute;
+		top: -.8rem;
+		left: -3rem;
+
+		display: block;
+		width: 7.4rem;
+		height: .8rem;
+
+		background: $accent;
+		opacity: 0;
+
+		transform: translateX(-100%) skewY(-13deg);
+		content: '';
+
+		transition: opacity .3s ease, transform .3s ease;
+	}
+}
+
+//------------------------------------------------------------nav###
+
+//------------------------------------------------------------menu
+.menu {}
+
+.menu__left_bar,
+.menu__main,
+.menu__title {
+	position: absolute;
+}
+
+.menu__left_bar {
+	top: 0;
+	left: 0;
+
+	width: 10.4rem;
+	height: var(--full-screen);
+
+	background: #2C3C83;
+
+	transform: translateY(-100%);
+	will-change: transform;
+
+	@include bp($point_1, min) {
+		transition: transform .2s ease .6s;
+	}
+
+	@include bp($point_1 - 1) {
+		transition: transform .2s ease .3s;
+	}
+
+	@include bp($point_4 - 1) {
+		display: none;
+	}
+
+	.menu--active_mod & {
+		transform: translateY(0);
+
+		transition: transform .2s ease;
+	}
+}
+
+.menu__main {
+	top: 0;
+	left: 0;
+
+	width: 100%;
+
+	background: #233379;
+
+	transform: translateX(-100vw);
+	will-change: transform;
+
+	@include bp($point_1, min) {
+		transition: transform .3s ease .3s;
+	}
+
+	@include bp($point_1 - 1) {
+		transition: transform .3s ease;
+	}
+
+	&::before {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+
+		width: 100%;
+		height: var(--height-header);
+		
+		border-bottom: 1px solid rgba($white, .16);
+		background: #233379;
+
+		content: '';
+	}
+
+	.menu--active_mod & {
+		transform: translateX(0);
+
+		transition: transform .3s ease .2s;
+	}
+}
+
+.menu__main_in {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	align-content: stretch;
+	width: 100%;
+	height: var(--full-screen);
+
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	@include bp($point_1, min) {
+		padding: calc(var(--height-header) + var(--gl-indent)) calc(10.4rem + var(--gl-indent));
+	}
+
+	@include bp($point_1 - 1) {
+		padding: calc(var(--height-header) + var(--gl-indent)) var(--gl-indent) var(--gl-indent) calc(10.4rem + var(--gl-indent));
+	}
+
+	@include bp($point_4 - 1) {
+		padding: calc(var(--height-header) + var(--gl-indent)) var(--gl-indent) var(--gl-indent);
+	}
+}
+
+.menu__buttons {
+	margin-bottom: 4rem;
+}
+
+.menu__buttons_in {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	margin: 0 -1rem -1rem 0;
+
+	@include bp($point_4, min) {
+		display: none;
+	}
+}
+
+.menu__button {
+	padding: 0 1rem 1rem 0;
+}
+
+.menu__main_nav {
+	margin: auto;
+}
+
+.menu__title {
+	position: absolute;
+	top: 3rem;
+	right: max(50%, 66rem);
+
+	font: 700 4.8rem / 1.15 $font_1;
+	color: $white;
+
+	opacity: 0;
+
+	transform: translate(50%, -2rem);
+	will-change: transform;
+
+	transition: transform .3s ease, opacity .3s ease;
+
+	@include bp($point_1 - 1) {
+		display: none;
+	}
+
+	.menu--active_mod & {
+		transform: translateX(50%);
+		opacity: 1;
+
+		transition: transform .3s ease .5s, opacity .3s ease .5s;
+	}
+}
+
+//------------------------------------------------------------menu###
+
 //------------------------------------------------------------layout
 .header {
+	@extend %global_flex_block_row_nowrap_flex-start_stretch;
+
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: z-index(header);
 
 	height: var(--height-header);
 	width: 100%;
 
-	font-size: 1rem;
+	transition: height .3s ease, background .3s ease, box-shadow .3s ease;
+	will-change: height, background, box-shadow;
 
-	will-change: transform;
+	@include bp($point_4, min) {
+		padding: 0 var(--gl-indent) 0 calc(var(--gl-indent) + 10rem);
+	}
 
-	@include z-index(header);
+	@include bp($point_4 - 1) {
+		padding: 0 var(--gl-indent) 0 calc(var(--gl-indent) + 8rem);
+	}
+
+	&.header--fixed_mod {
+		height: 9rem;
+
+		background: #233379;
+		box-shadow: 0 0 4px rgba($black, .4);
+	}
+}
+
+.header__in {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+
+	position: relative;
+	z-index: 1;
+
+	width: 100%;
+}
+
+.header__logo {
+	flex-shrink: 0;
+	margin-right: 3rem;
+	width: 8.2rem;
+	height: 6.8rem;
+}
+
+.header__phone_button {
+	margin: 0 1rem 0 auto;
+
+	@include bp($point_4 - 1) {
+		display: none;
+	}
+}
+
+.header__cta_button {
+	@include bp($point_4 - 1) {
+		display: none;
+	}
 }
 
 //------------------------------------------------------------layout###

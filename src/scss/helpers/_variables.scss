@@ -12,10 +12,12 @@ $black: #000;
 $color_text_base: $black;
 $color_link_base:#4aa3df;
 $body_bg: $white;
+$accent: #D84B45;
 //---------------------------------------------colors###
 
 //---------------------------------------------z-index
 $z-index: (
+	menu_trigger: 210,
 	popup : 101,
 	header : 100,
 	footer : 100

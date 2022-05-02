@@ -1,4 +1,9 @@
-// .btn_base {
-// 	@extend %blue_btn_1;
-// 	@extend %btn_size_1;
-// }
+.accent_button {
+	@extend %button_theme_1;
+	@extend %button_size_1;
+}
+
+.outlined_button {
+	@extend %button_theme_2;
+	@extend %button_size_2;
+}
