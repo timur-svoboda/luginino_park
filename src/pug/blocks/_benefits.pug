@@ -1,0 +1,34 @@
+-
+	const benefits = {
+		items: [
+			{
+				title: 'Экологично',
+				description: 'Качественные строительные материалы бизнес –класса. Современные строительные технологии.',
+			},
+			{
+				title: 'Удобно',
+				description: 'Ленинградское или Пятницкое шоссе, 19 км от МКАД. 1 км от г. Зеленоград с инфраструктурой столичного уровня.',
+			},
+			{
+				title: 'Современно',
+				description: 'Единая архитектурная концепция. Стиль BarnHouse: Минимализм. Лофт. Биотек.',
+			},
+			{
+				title: 'Выгодно',
+				description: 'Инвестиционная цена на этапе фундамента. От 3 млн рублей. Рассрочка от Застройщика.',
+			},
+		],
+	};
+
+section.section.benefits
+	.benefits__in
+		ul.benefits__list
+			each benefit, index in benefits.items
+				li.benefits__item
+					.benefit
+						.benefit__in
+							.benefit__icon
+								+icon(`benefit_${index + 1}`, 'icon--size_mod')
+							.benefit__text
+								.benefit__title= benefit.title
+								.benefit__description= benefit.description

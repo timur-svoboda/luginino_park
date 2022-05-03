@@ -4,7 +4,14 @@
 
 	--height-header: 12rem;
 	--height-footer: 10rem;
-	--gl-indent: 3.6rem;
+	
+	@include bp($point_4, min) {
+		--gl-indent: 3.6rem;
+	}
+
+	@include bp($point_4 - 1) {
+		--gl-indent: 1.6rem;
+	}
 }
 
 html {

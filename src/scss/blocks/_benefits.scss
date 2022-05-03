@@ -1,0 +1,87 @@
+//------------------------------------------------------------benefit
+.benefit {
+	background: $white;
+	border: 1px solid #E7E7E7;
+	border-radius: 2rem;
+
+	@include bp($point_5, min) {
+		padding: 3.8rem 5rem;
+	}
+
+	@include bp($point_5 - 1) {
+		padding: 1.6rem;
+	}
+}
+
+.benefit__in {
+	@extend %global_flex_block_row_nowrap_flex-start;
+
+	margin: 0 -6rem -6rem 0;
+
+	@include bp($point_5 - 1) {
+		flex-wrap: wrap;
+	}
+}
+
+.benefit__icon,
+.benefit__text {
+	padding: 0 6rem 6rem 0;
+}
+
+.benefit__icon {
+	box-sizing: content-box;
+	flex-shrink: 0;
+	width: 10rem;
+	height: 10rem;
+}
+
+.benefit__text {
+	color: $black;
+}
+
+.benefit__title {
+	margin-bottom: calc(-.0025 * 100vw + .1rem);
+
+	font: 700 calc(.02 * 100vw + 3.4rem) / 1.2 $font_2;
+}
+
+.benefit__description {
+	font: calc(.005 * 100vw + 1.4rem) / 1.2 $font_1;
+}
+
+//------------------------------------------------------------benefit
+
+//------------------------------------------------------------benefits
+.benefits {
+	padding: 8.5rem var(--gl-indent);
+}
+
+.benefits__in {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 147.4rem;
+}
+
+.benefits__list {
+	@extend %global_flex_block_row_wrap_flex-start_stretch;
+
+	align-content: stretch;
+	margin: 0 -3rem -3rem 0;
+}
+
+.benefits__item {
+	@extend %global_flex_block_row_nowrap_flex-start;
+
+	align-items: stretch;
+	padding: 0 3rem 3rem 0;
+
+	@include bp($point_1, min) {
+		width: 50%;
+	}
+
+	@include bp($point_1 - 1) {
+		width: 100%;
+	}
+}
+
+//------------------------------------------------------------benefits
