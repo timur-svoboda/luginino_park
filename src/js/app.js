@@ -7,6 +7,7 @@ import pageWidgetInit from './dev_vendors/dev_widget';
 
 // ------------------  import components
 import header from './components/header';
+import hero from './components/hero';
 // ------------------  import components###
 
 window.jQuery = $;
@@ -34,6 +35,7 @@ const loadFunc = () => {
 	console.log('page load');
 
 	header();
+	hero();
 };
 
 documentReady(() => {

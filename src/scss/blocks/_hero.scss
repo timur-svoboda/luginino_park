@@ -1,8 +1,7 @@
-.hero {
-	background: linear-gradient(180deg, #142261 0%, #7FB2FF 54.17%, #FFFFFF 80.54%);
-}
+@use "sass:color";
 
-.hero__top {
+//------------------------------------------------------------hero_top
+.hero_top {
 	@extend %global_flex_block_row_nowrap_flex-start;
 
 	position: relative;
@@ -13,36 +12,40 @@
 	height: var(--full-screen);
 }
 
-.hero__title {
-	margin: auto;
+.hero_top__main {
+	position: relative;
 
-	font: 700 28.8rem / 33rem $font_2;
+	margin: auto;
+}
+
+.hero_top__title {
+	margin-bottom: 7.6rem;
+
+	font: 700 calc(.136 * 100vw + 2.6rem) / 1.14 $font_2;
 	color: $white;
 	text-transform: uppercase;
 	text-align: center;
 
 	p:not(:last-child) {
-		margin-bottom: -8.6rem;
+		margin-bottom: calc(-0.0476 * 100vw + .6rem);
 	}
 }
 
-.hero__arrow_down {
-	position: absolute;
-	left: 50%;
-	bottom: 12rem;
-
+.hero_top__arrow_down {
+	margin: 0 auto;
 	width: 4.4rem;
 	height: 2.2rem;
 
 	color: $white;
-
-	transform: translateX(-50%);
 }
 
-.hero__cloud {
+//------------------------------------------------------------hero_top###
+
+//------------------------------------------------------------hero_cloud
+.hero_cloud {
 	position: absolute;
 
-	&.hero__cloud--left_mod {
+	&.hero_cloud--left_mod {
 		top: 38%;
 		left: 0;
 
@@ -50,7 +53,7 @@
 		height: 46.6rem;
 	}
 
-	&.hero__cloud--right_mod {
+	&.hero_cloud--right_mod {
 		top: 35%;
 		right: 0;
 
@@ -59,25 +62,225 @@
 	}
 }
 
-.hero__cloud_picture,
-.hero__bottom_house_picture {
+.hero_cloud__picture {
 	display: block;
 	width: 100%;
 	height: 100%;
 }
 
-.hero__cloud_img {
+.hero_cloud__img {
 	@extend %contain_img;
 }
 
-.hero__bottom {
+//------------------------------------------------------------hero_cloud###
+
+//------------------------------------------------------------hero_cottage_checkboxes
+.hero_cottage_checkboxes {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+
+	width: 100%;
+	height: 100%;
+
+	@include bp($point_4 - 1) {
+		display: none;
+	}
 }
 
-.hero__bottom_house {
+.hero_cottage_checkboxes__item {
+	position: absolute;
+
+	&:nth-child(1) {
+		top: 49.4%;
+		left: 5.4%;
+	}
+
+	&:nth-child(2) {
+		top: 72.4%;
+		left: 28.2%;
+	}
+	
+	&:nth-child(3) {
+		top: 33.2%;
+		left: 39%;
+	}
+	
+	&:nth-child(4) {
+		top: 42.8%;
+		left: 67.8%;
+	}
+	
+	&:nth-child(5) {
+		top: 40.6%;
+		left: 87.4%;
+	}
+}
+
+.hero_cottage_checkboxes__item_button {
+	position: relative;
+
+	width: 3.8rem;
+	height: 3.8rem;
+
+	box-shadow: 0 0 4px 2px rgba($black, .4);
+	border: 2px solid transparent;
+	border-radius: 50%;
+	background: $accent;
+	cursor: pointer;
+
+	transition: border-color .3s ease, background .3s ease;
+	will-change: border-color, background;
+
+	&:hover,
+	&:focus {
+		background: color.adjust($accent, $lightness: 5%);
+	}
+
+	&:active {
+		background: color.adjust($accent, $lightness: -5%);
+	}
+
+	.hero_cottage_checkboxes__item--checked_mod & {
+		background: $white;
+
+		&:hover,
+		&:focus {
+			border-color: $accent;
+		}
+
+		&:active {
+			border-color: transparent;
+			background: color.adjust($accent, $lightness: -5%);
+		}
+	}
+}
+
+.hero_cottage_checkboxes__item_sign {
+	&::before,
+	&::after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		display: block;
+		margin: -1px 0 0 -1rem;
+		width: 2rem;
+		height: 2px;
+
+		border-radius: 1px;
+		background: $white;
+
+		content: '';
+
+		.hero_cottage_checkboxes__item--checked_mod & {
+			background: $accent;
+		}
+
+		.hero_cottage_checkboxes__item--checked_mod .hero_cottage_checkboxes__item_button:active & {
+			background: $white;
+		}
+	}
+
+	&::before {
+		transform: rotate(90deg);
+
+		transition: background .3s ease, transform .3s ease;
+		will-change: background, transform;
+
+		.hero_cottage_checkboxes__item--checked_mod & {
+			transform: rotate(0);
+		}
+	}
+
+	&::after {
+		transition: background .3s ease;
+		will-change: background;
+	}
+}
+
+.hero_cottage_checkboxes__item_popup {
+	position: absolute;
+	left: 50%;
+	bottom: 5.2rem;
+
+	margin-left: -18.2rem;
+	padding: 4rem 3rem 3.4rem;
+	width: 36.4rem;
+
+	box-shadow: 0 0 4px 2px rgba($black, .2);
+	background: $white;
+	border-radius: 3.8rem;
+	opacity: 0;
+
+	pointer-events: none;
+
+	transition: opacity .3s ease;
+
+	.hero_cottage_checkboxes__item--left_mod & {
+		margin-left: -34.4rem;
+	}
+
+	.hero_cottage_checkboxes__item--right_mod & {
+		margin-left: -2rem;
+	}
+
+	.hero_cottage_checkboxes__item--checked_mod & {
+		opacity: 1;
+		
+		pointer-events: auto;
+	}	
+}
+
+.hero_cottage_checkboxes__item_img_wrap {
+	margin: 0 auto 1.4rem;
+	width: 23.6rem;
+	height: 23.6rem;
+
+	border-radius: 50%;
+
+	overflow: hidden;
+}
+
+.hero_cottage_checkboxes__item_picture {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.hero_cottage_checkboxes__item_img {
+	@extend %cover_img;
+}
+
+.hero_cottage_checkboxes__item_text {
+	font: 3.6rem / 4.2rem $font_1;
+	text-align: center;
+	color: $black;
+}
+
+//------------------------------------------------------------hero_cottage_checkboxes###
+
+//------------------------------------------------------------hero_cottage
+.hero_cottage {
+}
+
+.hero_cottage__house {
 	position: relative;
 
 	width: 100%;
-	max-height: 97rem;
+
+	@include bp($point_4, min) {
+		height: 97rem;
+	}
+
+	@include bp($point_4 - 1, $point_6) {
+		height: 65rem;
+	}
+
+	@include bp($point_6 - 1) {
+		height: 40rem;
+	}
 
 	&::after {
 		position: absolute;
@@ -94,9 +297,151 @@
 	}
 }
 
-.hero__bottom_house_picture {}
+.hero_cottage__house_picture {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 
-.hero__bottom_house_img {
+.hero_cottage__house_img {
 	@extend %cover_img;
 }
 
+.hero_cottage__meta {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+
+	padding: 0 var(--gl-indent);
+	width: 100%;
+}
+
+.hero_cottage__meta_in {
+	@extend %global_flex_block_row_nowrap_flex-start_stretch;
+
+	align-content: stretch;
+	margin: 0 auto;
+	width: 100%;
+	max-width: $page_width;
+	min-height: 16rem;
+
+	border-top: 1px solid #DFDFDF;
+}
+
+.hero_cottage__tags_wrap {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+
+	flex-grow: 1;
+	padding: 2rem 6.4rem 2rem 0;
+	flex-basis: 73rem;
+
+	border-right: 1px solid #DFDFDF;
+
+	@include bp($point_1 - 1) {
+		display: none;
+	}
+}
+
+.hero_cottage__tags {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	margin: 0 -1.4rem -1.4rem 0;
+}
+
+.hero_cottage__tag_wrap {
+	padding: 0 1.4rem 1.4rem 0;
+}
+
+.hero_cottage__tag {
+	@extend %global_flex_block_row_nowrap_center_center;
+
+	padding: 0 1.2rem;
+	min-height: 3.8rem;
+
+	font: 2rem / 3.8rem $font_1;
+	color: $white;
+	text-transform: uppercase;
+
+	border-radius: 2rem;
+
+	&.hero_cottage__tag--accent_1_mod {
+		background: #7FB2FF;
+	}
+
+	&.hero_cottage__tag--accent_2_mod {
+		background: #58A85C;
+	}
+}
+
+.hero_cottage__price_and_button {
+	@extend %global_flex_block_row_wrap_space_between_center;
+
+	flex-grow: 1;
+	flex-basis: 103rem;
+
+	@include bp($point_1, min) {
+		padding: 2rem 0 2rem 6.4rem;
+	}
+
+	@include bp($point_1 - 1) {
+		padding: 2rem 0;
+	}
+
+	@include bp($point_4, min) {
+		margin: 0 -3rem -3rem 0;
+	}
+
+	@include bp($point_4 - 1) {
+		margin: 0 -2rem -2rem 0;
+	}
+}
+
+.hero_cottage__price,
+.hero_cottage__button_wrap {
+	@include bp($point_4, min) {
+		padding: 0 3rem 3rem 0;
+	}
+
+	@include bp($point_4 - 1) {
+		padding: 0 2rem 2rem 0;
+	}
+}
+
+.hero_cottage__price {
+	flex-shrink: 0;
+	color: $white;
+}
+
+.hero_cottage__price_label {
+	font: 2.4rem / 2.8rem $font_1;
+}
+
+.hero_cottage__price_quantity {
+	font-weight: 700;
+	font-family: $font_1;
+
+	@include bp($point_4, min) {
+		font-size: 4.8rem;
+		line-height: 6.2rem;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 3rem;
+		line-height: 4rem;
+	}
+}
+
+.hero_cottage__button_wrap {
+}
+
+//------------------------------------------------------------hero_cottage###
+
+//------------------------------------------------------------hero
+.hero {
+	background: linear-gradient(180deg, #142261 0%, #7FB2FF 54.17%, #FFFFFF 80.54%);
+
+	overflow: hidden;
+}
+
+//------------------------------------------------------------hero###

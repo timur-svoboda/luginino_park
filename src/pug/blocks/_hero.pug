@@ -1,39 +1,79 @@
+-
+	const checkboxes = [
+		{
+			mod: 'hero_cottage_checkboxes__item--right_mod',
+			text: 'Едва открыв глаза, вдохнуть аромат леса',
+		},
+		{
+			text: 'Едва открыв глаза, вдохнуть аромат леса',
+		},
+		{
+			text: 'Едва открыв глаза, вдохнуть аромат леса',
+		},
+		{
+			text: 'Едва открыв глаза, вдохнуть аромат леса',
+		},
+		{
+			mod: 'hero_cottage_checkboxes__item--left_mod',
+			text: 'Едва открыв глаза, вдохнуть аромат леса',
+		},
+	];
+
 section.section.hero
-	.hero__top
-		.hero__title
-			p Лугинино
-			p Парк
-		.hero__arrow_down
-			+icon('angle_arrow_down', 'icon--size_mod')
-	.hero__cloud.hero__cloud--left_mod
+	.hero_top
+		.hero_top__main
+			.hero_top__title
+				p Лугинино
+				p Парк
+			.hero_top__arrow_down
+				+icon('angle_arrow_down', 'icon--size_mod')
+	.hero_cloud.hero_cloud--left_mod
 		+picture({
 			img: 'left_cloud',
-			class: 'hero__cloud_picture',
-			img_class: 'hero__cloud_img',
+			class: 'hero_cloud__picture',
+			img_class: 'hero_cloud__img',
 			png: true,
 		})
-	.hero__cloud.hero__cloud--right_mod
+	.hero_cloud.hero_cloud--right_mod
 		+picture({
 			img: 'right_cloud',
-			class: 'hero__cloud_picture',
-			img_class: 'hero__cloud_img',
+			class: 'hero_cloud__picture',
+			img_class: 'hero_cloud__img',
 			png: true,
 		})
-	.hero__bottom
-		.hero__bottom_house
+	.hero_cottage
+		.hero_cottage__house
 			+picture({
 				img: 'hero_house',
-				class: '.hero__bottom_house_picture',
-				img_class: 'hero__bottom_house_img',
+				class: 'hero_cottage__house_picture',
+				img_class: 'hero_cottage__house_img',
 				png: true
 			})
-		.hero__bottom_meta
-			.hero__bottom_meta_in
-				.hero__bottom_tags
-					.tag.tag--accent_1 Ипотека от 5%
-					.tag.tag--accent_2 Ленинградское шоссе — 1 км от г. Зеленоград
-				.hero__bottom_price_and_button
-					.hero__bottom_price
-						.hero__bottom_price_label стоимость
-						.hero__bottom_price_quantity от 3 млн рублей
-					button.accent_button.hero__bottom_button(type="button") Оставить заявку
+			.hero_cottage_checkboxes.heroCheckboxContainer(role="group")
+				each checkbox in checkboxes
+					- const item_mod = checkbox.mod || '';
+					.hero_cottage_checkboxes__item.heroCheckbox(class=item_mod)
+						.hero_cottage_checkboxes__item_button.heroCheckboxButton(role="checkbox", aria-checked="false")
+							.hero_cottage_checkboxes__item_sign
+						.hero_cottage_checkboxes__item_popup
+							.hero_cottage_checkboxes__item_img_wrap
+								+picture({
+									img: `hero_checkbox_1`,
+									class: 'hero_cottage_checkboxes__item_picture',
+									class: 'hero_cottage_checkboxes__item_img',
+								})
+							.hero_cottage_checkboxes__item_text= checkbox.text
+		.hero_cottage__meta
+			.hero_cottage__meta_in
+				.hero_cottage__tags_wrap
+					.hero_cottage__tags
+						.hero_cottage__tag_wrap
+							.hero_cottage__tag.hero_cottage__tag--accent_1_mod Ипотека от 5%
+						.hero_cottage__tag_wrap
+							.hero_cottage__tag.hero_cottage__tag--accent_2_mod Ленинградское шоссе — 1 км от г. Зеленоград
+				.hero_cottage__price_and_button
+					.hero_cottage__price
+						.hero_cottage__price_label стоимость
+						.hero_cottage__price_quantity от 3 млн рублей
+					.hero_cottage__button_wrap
+						button.accent_button.hero_cottage__button(type="button") Выбрать коттедж
