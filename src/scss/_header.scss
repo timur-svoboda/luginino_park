@@ -195,6 +195,10 @@
 //------------------------------------------------------------nav###
 
 //------------------------------------------------------------menu
+.body--menu_active_mod {
+	overflow: hidden;
+}
+
 .menu {}
 
 .menu__left_bar,
@@ -266,6 +270,10 @@
 		background: #233379;
 
 		content: '';
+
+		.header--fixed_mod & {
+			height: 9rem;
+		}
 	}
 
 	.menu--active_mod & {
@@ -344,6 +352,10 @@
 		opacity: 1;
 
 		transition: transform .3s ease .5s, opacity .3s ease .5s;
+	}
+
+	.header--fixed_mod & {
+		top: 1.8rem;
 	}
 }
 

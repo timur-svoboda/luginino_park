@@ -8,6 +8,7 @@ export default function header() {
 		$menuTrigger.addEventListener('click', () => {
 			$menuTrigger.classList.toggle('menu_trigger--active_mod');
 			$menu.classList.toggle('menu--active_mod');
+			document.body.classList.toggle('body--menu_active_mod');
 		});
 	}
 
@@ -16,10 +17,10 @@ export default function header() {
 	if ($header) {
 		const yAxisStart = 0;
 		const throttleTimeout = 100;
+		const fixedMod = 'header--fixed_mod';
 
 		document.addEventListener('scroll', throttle(() => {
 			const isDocumentScrolled = window.scrollY > yAxisStart;
-			const fixedMod = 'header--fixed_mod';
 			const doesHeaderHaveFixedMod = $header.classList.contains(fixedMod);
 
 			if (isDocumentScrolled && !doesHeaderHaveFixedMod) {
