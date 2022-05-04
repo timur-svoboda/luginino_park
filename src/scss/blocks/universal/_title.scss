@@ -4,6 +4,11 @@
 	text-transform: uppercase;
 	letter-spacing: -0.025em;
 
+	&.title--size_1_mod {
+		font-size: calc(.02 * 100vw + 3.4rem);
+		line-height: 1.2;
+	}
+
 	&.title--white_mod {
 		color: white;
 	}
