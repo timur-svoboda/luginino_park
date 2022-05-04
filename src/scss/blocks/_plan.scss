@@ -1,0 +1,42 @@
+.plan__img_wrap {
+	position: relative;
+}
+
+.plan__title,
+.plan__img_wrap::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.plan__title {
+	z-index: 1;
+
+	padding: 5.4% var(--gl-indent);
+}
+
+.plan__img_wrap,
+.plan__img_wrap::after,
+.plan__picture {
+	width: 100%;
+}
+
+.plan__img_wrap::after,
+.plan__picture {
+	display: block;
+	height: 100%;
+}
+
+.plan__img_wrap {
+	height: calc(0.388 * 100vw + 27.6rem);
+
+	&::after {
+		background: linear-gradient(0, rgba($black, 0) 75.27%, rgba($black, 0.5) 100%);
+
+		content: '';
+	}
+}
+
+.plan__img {
+	@extend %cover_img;
+}

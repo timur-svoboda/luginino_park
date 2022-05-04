@@ -10,12 +10,14 @@
 @import "print";
 
 // blocks
+@import "blocks/universal/title";
 @import "header";
 @import "footer";
 @import "forms";
 @import "blocks/sections";
 @import "blocks/hero";
 @import "blocks/benefits";
+@import "blocks/plan";
 
 // base_ui
 @import "base_ui/all_icons";
