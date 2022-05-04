@@ -1,8 +1,8 @@
 .title {
-	font: 700 calc(0.065 * 100vw + 2rem) / 1.15 $font_2;
+	font: 700 calc(.065 * 100vw + 2rem) / 1.15 $font_2;
 	color: $black;
 	text-transform: uppercase;
-	letter-spacing: -0.025em;
+	letter-spacing: -.025em;
 
 	&.title--size_1_mod {
 		font-size: calc(.02 * 100vw + 3.4rem);
@@ -15,5 +15,9 @@
 
 	&.title--shadow_mod {
 		text-shadow: 0 0 4px $black;
+	}
+
+	&.title--center_mod {
+		text-align: center;
 	}
 }
