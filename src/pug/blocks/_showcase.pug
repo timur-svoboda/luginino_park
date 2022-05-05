@@ -1,0 +1,87 @@
+-
+	const showcase = {
+		previews: [
+			{
+				number: 28,
+			},
+			{
+				number: 39,
+			},
+			{
+				number: 19,
+			},
+		],
+	};
+
+	const features = [
+		{
+			label: 'общая площадь',
+			value: '164 м²',
+		},
+		{
+			label: 'стоимость',
+			value: 'по запросу',
+		},
+	];
+
+section.section.showcase
+	.section_in
+		h2.title.title--center_mod.showcase__title Коттеджи поселка
+		ul.showcase__list
+			each preview, preview_index in showcase.previews
+				li.showcase__item
+					.preview
+						.preview__in
+							.preview__exterior_meta_button
+								.preview__exterior_swiper.exteriorSwiper
+									.swiper-wrapper
+										+loop_while(5)
+											.swiper-slide
+												.preview__exterior_img_wrap
+													+picture({
+														img: `preview_exterior_${preview_index + 1}`,
+														class: 'preview__exterior_picture',
+														img_class: 'preview__exterior_img',
+													})
+									.swiper-pagination.previewExteriorPagination
+									.preview__exterior_nav_button.preview__exterior_nav_button--prev_mod.previewExteriorPrev
+										+icon('left_arrow', 'icon--size_mod')
+									.preview__exterior_nav_button.preview__exterior_nav_button--next_mod.previewExteriorNext
+										+icon('right_arrow', 'icon--size_mod')
+								.preview__meta_button
+									.preview__meta
+										.title.title--size_1_mod.preview__title Коттедж ##{preview.number}
+										ul.preview__feature_list
+											each feature in features
+												li.preview__feature_item
+													.preview__feature_label= feature.label
+													.preview__feature_value= feature.value
+									.preview__button_wrap
+										button.accent_button(type="button") Оставить заявку
+							.preview__interior.interiorSwiperContainer
+								.preview__interior_swiper.interiorSwiper
+									.swiper-wrapper
+										+loop_while(2)
+											.swiper-slide
+												.preview__floor_img_wrap
+													+picture({
+														img: `preview_interior_${i}`,
+														class: 'preview__floor_picture',
+														img_class: 'preview__floor_img',
+													})
+								.preview__interior_pagination
+									.preview__interior_pagination_in
+										.preview__interior_pagination_label Этаж:
+										ul.preview__interior_pagination_list.interiorPagination(role="radiogroup", aria-label='Выбор этажа')
+												li.preview__interior_pagination_item
+													.preview__interior_pagination_button.preview__interior_pagination_button--active_mod.interiorPaginationButton(
+														role="radio",
+														aria-label="Этаж 1",
+														aria-checked="true"
+													) 1
+												li.preview__interior_pagination_item
+													.preview__interior_pagination_button.interiorPaginationButton(
+													role="radio",
+													aria-label="Этаж 2",
+													aria-checked="true"
+												) 2
