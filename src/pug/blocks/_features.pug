@@ -1,0 +1,99 @@
+-
+	const features_top = {
+		title: 'Особенности поселка',
+		description: 'КП «Кабаново» граничит с одноименной деревней и лесным массивом. Благодаря небольшому количеству участков — здесь их всего 41 — поселок уютный и камерный. Периметр обнесен ограждением, по территории проложены дороги, въезд будет оборудован шлагбаумом. Поблизости от поселка «Кабаново» находится множество инфраструктурных объектов. Недалеко расположены Вознесенская церковь и Николо-Берлюковский монастырь.',
+	};
+
+	const village_features = [
+		{
+			img: 'village_feature_1',
+			title: 'Пруд в центре',
+			description: 'Наличие собственной береговой линии с пляжем, причалом для лодок и рестораном с летней террасой у воды. В 1,5 км от "Федоскино Парк" - "большая вода": Пяловское, Учинское, Икшинское, Пестовское, Клязьминское водохранилища.',
+		},
+		{
+			img: 'village_feature_2',
+			title: 'Транспортная доступность',
+			description: 'Если Вы любите пробки мегаполиса, - Вам вряд ли понравится близость "Федоскино Парк" к Москве. Всего 15 км по Дмитровскому шоссе, и вы на месте. А после окончания реконструкции шоссе вы устанете оплачивать штрафы за превышение скорости, ведь ваш путь от МКАД будет занимать считанные минуты!',
+		},
+	];
+
+	const features_info = {
+		title: 'Общая информация',
+		columns: [
+			[
+				{
+					label: 'Срок сдачи',
+					value: 'Сдан',
+				},
+				{
+					label: 'Размер поселка',
+					value: '4 Га',
+				},
+				{
+					label: 'Земли',
+					value: 'Под дачное строительство',
+				},
+			],
+			[
+				{
+					label: 'Класс поселка',
+					value: 'Эконом',
+				},
+				{
+					label: 'Кол-во объектов',
+					value: '44',
+				},
+				{
+					label: 'Стоимость обслуживания',
+					value: '1000 руб./мес.',
+				},
+			],
+		],
+	}
+
+section.features.section
+	.section_in
+		.features_top.features__top
+			.features_top__in
+				.features_top__column
+					h2.title.features_top__title= features_top.title
+				.features_top__column
+					p.features_top__description= features_top.description
+		.features__list
+			.village_feature.village_feature--left_img_mod.features__item
+				.village_feature__in
+					.village_feature__column.village_feature__column--img_mod
+						.village_feature__img_wrap
+							+picture({
+								img: village_features[0].img,
+								class: 'village_feature__picture',
+								img_class: 'village_feature__img',
+							})
+					.village_feature__column.village_feature__column--text_mod
+						.village_feature__text
+							h3.title.title--size_1_mod.village_feature__title= village_features[0].title
+							p.village_feature__description= village_features[0].description
+			.village_feature.village_feature--right_img_mod.features__item
+				.village_feature__in
+					.village_feature__column.village_feature__column--text_mod
+						.village_feature__text
+							h3.title.title--size_1_mod.village_feature__title= village_features[1].title
+							p.village_feature__description= village_features[1].description
+					.village_feature__column.village_feature__column--img_mod
+						.village_feature__img_wrap
+							+picture({
+								img: village_features[1].img,
+								class: 'village_feature__picture',
+								img_class: 'village_feature__img',
+							})
+		.features_info
+			h3.title.title--size_1_mod.features_info__title= features_info.title
+			.features_info__table
+				each column in features_info.columns
+					.features_info__column
+						ul.features_info__list
+							each item in column
+								li.features_info__item
+									.features_info__item_in
+										.features_info__label= item.label
+										.features_info__value= item.value
