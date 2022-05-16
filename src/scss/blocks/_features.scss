@@ -183,7 +183,13 @@
 
 //------------------------------------------------------------features
 .features {
-	padding: 8.4rem var(--gl-indent) 29.4rem;
+	@include bp($point_2, min) {
+		padding: 8.4rem var(--gl-indent) 29.4rem;
+	}
+
+	@include bp($point_3) {
+		padding: 8.4rem var(--gl-indent);
+	}
 }
 
 .features__top {

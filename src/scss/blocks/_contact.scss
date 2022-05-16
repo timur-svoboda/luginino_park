@@ -1,0 +1,97 @@
+.contact {
+	background: #162564;
+
+	overflow: hidden;
+
+	@include bp($point_2, min) {
+		height: lock(90rem, $point_2, 100.8rem, $point_0);
+	}
+
+	@include bp($point_3) {
+		padding: 8.4rem var(--gl-indent);
+		height: auto;
+	}
+}
+
+.contact__person_text {
+	position: absolute;
+	bottom: lock(8rem, $point_2, 14.4rem, $point_0);
+	left: lock(3.6rem, $point_2, 13rem, $point_0);
+	z-index: 1;
+
+	@include bp($point_3) {
+		display: none;
+	}
+}
+
+.contact__person_name,
+.contact__person_description {
+	padding: 0 1rem;
+
+	line-height: 130%;
+	font-family: $font_1;
+	color: $white;
+
+	background: $accent;
+}
+
+.contact__person_name {
+	font-size: 3.6rem;
+}
+
+.contact__person_description {
+	font-size: 2.4rem;
+}
+
+.contact__person_img_wrap {
+	position: absolute;
+	bottom: lock(-10rem, $point_2, -8.8rem, $point_0);
+	left: lock(-18rem, $point_2, 14rem, $point_0);
+
+	width: lock(75rem, $point_2, 87.6rem, $point_0);
+	
+	@include bp($point_3) {
+		display: none;
+	}
+}
+
+.contact__picture {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.contact__img {
+	@extend %contain_img;
+}
+
+.contact__cta {
+	@include bp($point_2, min) {
+		position: absolute;
+		top: lock(16rem, $point_2, 22.6rem, $point_0);
+		right: lock(3.6rem, $point_2, 30rem, $point_0);
+		
+		max-width: 53rem;
+	}
+}
+
+.contact__title {
+	margin-bottom: 4rem;
+}
+
+.contact__description {
+	margin-bottom: 6rem;
+	
+	font: 2.4rem / 116% $font_1;
+	color: $white;
+}
+
+.contact__buttons {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	margin: 0 -1.6rem -1.6rem 0;
+}
+
+.contact__button_wrap {
+	padding: 0 1.6rem 1.6rem 0;
+}

@@ -1,0 +1,35 @@
+-
+	const contact = {
+		person: {
+			name: 'Анна Александровна',
+			description: '<p>Руководитель отдела продаж</p><p>Insli Недвижимость</p>',
+			img: 'contact_img',
+		},
+		title: 'Свяжитесь с нами',
+		description: 'Мы понимаем что выбор загородного дома это непросто, мы готовы облегчить и сделать процесс приятным.',
+		buttons: {
+			accent: 'Написать',
+			outlined: 'Позвонить',
+		},
+	};
+
+section.contact.section
+	.section_in
+		.contact__person_text
+			.contact__person_name= contact.person.name
+			.contact__person_description!= contact.person.description
+		.contact__person_img_wrap
+			+picture({
+				img: contact.person.img,
+				class: 'contact__picture',
+				img_class: 'contact__img',
+				png: true,
+			})
+		.contact__cta
+			h2.title.title--white_mod.contact__title= contact.title
+			p.contact__description= contact.description
+			.contact__buttons
+				.contact__button_wrap
+					button.accent_button(type="button")= contact.buttons.accent
+				.contact__button_wrap
+					button.outlined_button(type="button")= contact.buttons.outlined

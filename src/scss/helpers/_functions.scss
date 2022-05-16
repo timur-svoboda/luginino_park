@@ -1,0 +1,46 @@
+@use 'sass:string';
+@use 'sass:math';
+
+@function get_unit($value) {
+  @return string.slice($value * 0 + "", 2, -1);
+}
+
+@function strip_unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+@function check_lock_argument($argument_name, $argument_value, $acceptable_unit) {
+  @if type-of($argument_value) != number {
+    @error '#{$argument_name} must be a number';
+  }
+  
+  @if get_unit($argument_value) != $acceptable_unit and $argument_value != 0 {
+    @error '#{$argument_name} must be set in #{$acceptable_unit}';
+  }
+  
+  @return true;
+}
+
+@function lock($value_a, $width_a, $value_b, $width_b) {
+  $value_a_check: check_lock_argument('$value_a', $value_a, $acceptable_unit: 'rem');
+  $width_a_check: check_lock_argument('$width_a', $width_a, $acceptable_unit: 'px');
+  $value_b_check: check_lock_argument('$value_b', $value_b, $acceptable_unit: 'rem');
+  $width_b_check: check_lock_argument('$width_b', $width_b, $acceptable_unit: 'px');
+  
+  $value_a_in_px: strip_unit($value_a) * $root_font_size;
+  $value_b_in_px: strip_unit($value_b) * $root_font_size;
+  
+  $k: math.div($value_b_in_px - $value_a_in_px, $width_b - $width_a);
+  $b: $value_a_in_px - $k * $width_a;
+  $b_in_rem: #{math.div($b, $root_font_size)}rem;
+  
+  $min_value: math.min($value_a, $value_b);
+  $min_value: if($min_value == 0, 0rem, $min_value);
+
+  $responsive_value: calc(#{$k} * 100vw + #{$b_in_rem});
+
+  $max_value: math.max($value_a, $value_b);
+  $max_value: if($max_value == 0, 0rem, $max_value);
+  
+  @return clamp(#{$min_value}, #{$responsive_value}, #{$max_value});
+}

@@ -2,6 +2,7 @@
 $font_path: "../fonts/";
 $font_1: 'PTSans', sans-serif;
 $font_2: 'BebasNeuePro', sans-serif;
+$root_font_size: 10px;
 $font_size_base: 1.6rem;
 //---------------------------------------------fonts###
 
@@ -34,6 +35,7 @@ $gl_radius:.5rem;
 //---------------------------------------------global values###
 
 //---------------------------------------------media points
+$point_0: 1920px;
 $point_1: 1200px;
 $point_2: 1024px;
 $point_3: 1023px;
