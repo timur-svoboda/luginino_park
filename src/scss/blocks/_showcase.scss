@@ -47,7 +47,7 @@
 		width: 100%;
 		height: 100%;
 
-		background: rgba($black, .22);
+		background: rgba($black_color, .22);
 
 		content: '';
 	}
@@ -136,11 +136,11 @@
 
 	&:hover,
 	&:focus {
-		color: color.adjust($accent, $lightness: 5%);
+		color: color.adjust($orange_color, $lightness: 5%);
 	}
 
 	&:active {
-		color: color.adjust($accent, $lightness: -5%);
+		color: color.adjust($orange_color, $lightness: -5%);
 	}
 
 	&.preview__exterior_nav_button--prev_mod {
@@ -189,12 +189,12 @@
 
 .preview__feature_label {
 	font: 1.8rem / 2.4rem $font_1;
-	color: $black;
+	color: $black_color;
 }
 
 .preview__feature_value {
 	font: 700 2.4rem / 3.2rem $font_1;
-	color: $black;
+	color: $black_color;
 }
 
 .preview__button_wrap {
@@ -258,7 +258,7 @@
 	padding: 0 2rem 2rem 0;
 
 	font: 2.4rem / 2.8rem $font_1;
-	color: $black;
+	color: $black_color;
 }
 
 .preview__interior_pagination_list {
@@ -279,7 +279,7 @@
 	height: 6rem;
 
 	font: 2.4rem / 2.8rem $font_1;
-	color: $black;
+	color: $black_color;
 
 	border: 2px solid #F3F3F3;
 	border-radius: 50%;
@@ -289,17 +289,17 @@
 
 	&:hover,
 	&:focus {
-		color: $accent;
+		color: $orange_color;
 	}
 
 	&:active {
-		border-color: $accent;
+		border-color: $orange_color;
 	}
 
 	&.preview__interior_pagination_button--active_mod {
-		color: $accent;
+		color: $orange_color;
 		
-		border-color: $accent;
+		border-color: $orange_color;
 		cursor: default;
 	}
 }

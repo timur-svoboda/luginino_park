@@ -1,0 +1,24 @@
+.tags {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.tags__item {
+	padding: .8rem 1.2rem;
+
+	font: 2rem / 116% $font_1;
+	text-transform: uppercase;
+	color: $white;
+
+	border-radius: 9999px;
+	background: $green_color;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	&.tags__item--theme_red {
+		background: $orange_color;
+	}
+}

@@ -4,7 +4,7 @@
 	padding-left: 3rem;
 
 	font-size: 1.6rem;
-	color: $black;
+	color: $black_color;
 	cursor: pointer;
 
 	&:before,&:after {
@@ -19,7 +19,7 @@
 	&:before {
 		content: '';
 		border-radius: 2px;
-		border: 1px solid $black;
+		border: 1px solid $black_color;
 	}
 
 	&:after {
@@ -29,7 +29,7 @@
 		text-align: center;
 		line-height: 2rem;
 		opacity: 0;
-		color: $black;
+		color: $black_color;
 
 		.form_checkbox__element:checked + & {
 			opacity: 1;

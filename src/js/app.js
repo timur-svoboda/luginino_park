@@ -9,6 +9,7 @@ import pageWidgetInit from './dev_vendors/dev_widget';
 import header from './components/header';
 import hero from './components/hero';
 import showcase from './components/showcase';
+import otherVillages from './components/otherVillages';
 // ------------------  import components###
 
 window.jQuery = $;
@@ -38,6 +39,7 @@ const loadFunc = () => {
 	header();
 	hero();
 	showcase();
+	otherVillages();
 };
 
 documentReady(() => {

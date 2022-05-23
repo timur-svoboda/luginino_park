@@ -31,7 +31,7 @@
 	height: calc(.388 * 100vw + 27.6rem);
 
 	&::after {
-		background: linear-gradient(0, rgba($black, 0) 75.27%, rgba($black, .5) 100%);
+		background: linear-gradient(0, rgba($black_color, 0) 75.27%, rgba($black_color, .5) 100%);
 
 		content: '';
 	}

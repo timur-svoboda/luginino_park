@@ -19,7 +19,7 @@
 
 .features_top__description {
 	font: calc(0.019 * 100vw + 1.2rem) / 1.16 $font_1;
-	color: $black;
+	color: $black_color;
 
 	@include bp($point_2, min) {
 		max-width: 71.4rem;
@@ -107,7 +107,7 @@
 
 .village_feature__description {
 	font: calc(0.004 * 100vw + 1.6rem) / 1.16 $font_1;
-	color: $black;
+	color: $black_color;
 }
 
 //------------------------------------------------------------village_feature###
@@ -168,7 +168,7 @@
 	padding: 0 3rem 1rem 0;
 
 	font: 2.4rem / 2.8rem $font_1;
-	color: $black;
+	color: $black_color;
 }
 
 .features_info__label {

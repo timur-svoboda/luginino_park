@@ -1,0 +1,37 @@
+-
+	const slides = [
+		{
+			title: 'Зеленоградский',
+		},
+		{
+			title: 'Рождествено',
+		},
+	];
+
+section.section.other_villages
+	.section_in
+		.other_villages__top
+			.title.other_villages__title Другие поселки
+			.other_villages__navigation
+				button.other_villages__navigation_button.otherVillagesSwiperPrev(type="button", aria-label="Предыдущий слайд")
+					+icon('left_arrow', 'icon--size_mod')
+				button.other_villages__navigation_button.otherVillagesSwiperNext(type="button", aria-label="Следующий слайд")
+					+icon('right_arrow', 'icon--size_mod')
+		.other_villages__swiper.otherVillagesSwiper
+			.swiper-wrapper.other_villages__swiper_wrapper
+				each slide, i in [...slides, ...slides, ...slides]
+					.swiper-slide.other_villages_slide
+						.other_villages_slide__img_wrap
+							+picture({
+								img: `other_villages/${(i % 2) + 1}`,
+								class: 'other_villages_slide__picture',
+								img_class: 'other_villages_slide__img',
+							})
+							ul.tags.other_villages_slide__tags
+								li.tags__item Новая Рига, 19 км
+								li.tags__item.tags__item--theme_red от 3 млн руб
+						.title.title--size_1_mod.other_villages_slide__title= slide.title
+			.swiper-pagination.other_villages__swiper_pagination.otherVillagesPagination
+
+
+			

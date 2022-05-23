@@ -21,17 +21,17 @@
 
 	color: $white;
 
-	background: $accent;
+	background: $orange_color;
 
 	@include st_btn();
 
 	&:hover,
 	&:focus {
-		background: color.adjust($accent, $lightness: 5%);
+		background: color.adjust($orange_color, $lightness: 5%);
 	}
 
 	&:active {
-		background: color.adjust($accent, $lightness: -5%);
+		background: color.adjust($orange_color, $lightness: -5%);
 	}
 }
 
@@ -48,13 +48,13 @@
 
 	&:hover,
 	&:focus {
-		color: $black;
+		color: $black_color;
 
 		background: $white;
 	}
 
 	&:active {
-		color: $accent;
+		color: $orange_color;
 
 		background: $white;
 	}

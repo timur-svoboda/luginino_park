@@ -4,7 +4,7 @@
 	padding-left: 3rem;
 
 	font-size: 1.6rem;
-	color: $black;
+	color: $black_color;
 	cursor: pointer;
 
 	&:before {
@@ -15,7 +15,7 @@
 		width: 2rem;
 		height: 2rem;
 		border-radius:100%;
-		border:1px solid $black;
+		border:1px solid $black_color;
 		cursor:pointer;
 	}
 
@@ -29,7 +29,7 @@
 		width: 1rem;
 		height: 1rem;
 		border-radius: 100%;
-		background: $black;
+		background: $black_color;
 		opacity: 0;
 
 		.form_radio__element:checked + & {
