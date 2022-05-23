@@ -42,34 +42,39 @@ mixin header
 		.header__in
 			a.logo.header__logo(href="#")
 				img.logo__img(src=`${assetsImage}logo.svg`, alt="Логотип")
-			+button({
-				is_link: true,
-				class: 'button--theme_outlined header__phone_button',
-				href: 'tel:+88005553535',
-				text: '8 800 555 35 35',
-			})
-			+button({
-				class: 'header__cta_button',
-				text: 'Оставить заявку',
+			+button_group({
+				class: 'header__button_group',
+				buttons: [
+					{
+						is_link: true,
+						class: 'button--theme_outlined',
+						href: 'tel:+88005553535',
+						text: '8 800 555 35 35',
+					},
+					{
+						text: 'Оставить заявку',
+					}
+				],
 			})
 		.menu_trigger.header__menu_trigger.menuTrigger
 				.menu_trigger__decor
 		.menu
 			.menu__main
 				.menu__main_in
-					.menu__buttons
-						.menu__buttons_in
-							.menu__button
-								+button({
-									is_link: true,
-									class: 'button--theme_outlined',
-									href: 'tel:+88005553535',
-									text: '8 800 555 35 35',
-								})
-							.menu__button
-								+button({
-									text: 'Оставить заявку',
-								})
+					+button_group({
+						class: 'menu__buttons',
+						buttons: [
+							{
+								is_link: true,
+								class: 'button--theme_outlined',
+								href: 'tel:+88005553535',
+								text: '8 800 555 35 35',
+							},
+							{
+								text: 'Оставить заявку',
+							}
+						],
+					})
 					nav.main_nav.menu__main_nav
 						.main_nav__column
 							ul.main_nav__list

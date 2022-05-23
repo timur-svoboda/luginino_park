@@ -1,0 +1,14 @@
+.button_group {
+	overflow: hidden;
+}
+
+.button_group__in {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	margin: 0 -1.5rem -1.5rem 0;
+}
+
+.button_group__button_wrap {
+	padding: 0 1.5rem 1.5rem 0;
+}
+

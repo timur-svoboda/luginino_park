@@ -308,20 +308,10 @@
 
 .menu__buttons {
 	margin-bottom: 4rem;
-}
-
-.menu__buttons_in {
-	@extend %global_flex_block_row_wrap_flex-start;
-
-	margin: 0 -1rem -1rem 0;
 
 	@include bp($point_4, min) {
 		display: none;
 	}
-}
-
-.menu__button {
-	padding: 0 1rem 1rem 0;
 }
 
 .menu__main_nav {
@@ -408,15 +398,9 @@
 	height: 6.8rem;
 }
 
-.header__phone_button {
-	margin: 0 1rem 0 auto;
+.header__button_group {
+	margin-left: auto;
 
-	@include bp($point_4 - 1) {
-		display: none;
-	}
-}
-
-.header__cta_button {
 	@include bp($point_4 - 1) {
 		display: none;
 	}

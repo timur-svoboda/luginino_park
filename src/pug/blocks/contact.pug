@@ -28,13 +28,14 @@ section.contact.section
 		.contact__cta
 			h2.title.title--theme_white.contact__title= contact.title
 			p.contact__description= contact.description
-			.contact__buttons
-				.contact__button_wrap
-					+button({
-						text: contact.buttons.accent, 
-					})
-				.contact__button_wrap
-					+button({
+			+button_group({
+				buttons: [
+					{
+						text: contact.buttons.accent,
+					},
+					{
 						class: 'button--theme_outlined',
 						text: contact.buttons.outlined,
-					})
+					}
+				],
+			})

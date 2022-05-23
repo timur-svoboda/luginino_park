@@ -85,13 +85,3 @@
 	font: 2.4rem / 116% $pt_sans;
 	color: $white_color;
 }
-
-.contact__buttons {
-	@extend %global_flex_block_row_wrap_flex-start;
-
-	margin: 0 -1.6rem -1.6rem 0;
-}
-
-.contact__button_wrap {
-	padding: 0 1.6rem 1.6rem 0;
-}

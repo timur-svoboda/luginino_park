@@ -1,0 +1,7 @@
+mixin button_group(data)
+	.button_group(class=data.class)
+		.button_group__in
+			each button in data.buttons
+				.button_group__button_wrap
+					+button(button)
+			
