@@ -188,12 +188,12 @@
 }
 
 .preview__feature_label {
-	font: 1.8rem / 2.4rem $font_1;
+	font: 1.8rem / 2.4rem $pt_sans;
 	color: $black_color;
 }
 
 .preview__feature_value {
-	font: 700 2.4rem / 3.2rem $font_1;
+	font: 700 2.4rem / 3.2rem $pt_sans;
 	color: $black_color;
 }
 
@@ -257,7 +257,7 @@
 .preview__interior_pagination_label {
 	padding: 0 2rem 2rem 0;
 
-	font: 2.4rem / 2.8rem $font_1;
+	font: 2.4rem / 2.8rem $pt_sans;
 	color: $black_color;
 }
 
@@ -278,7 +278,7 @@
 	width: 6rem;
 	height: 6rem;
 
-	font: 2.4rem / 2.8rem $font_1;
+	font: 2.4rem / 2.8rem $pt_sans;
 	color: $black_color;
 
 	border: 2px solid #F3F3F3;

@@ -254,7 +254,7 @@
 }
 
 .hero_cottage_checkboxes__item_text {
-	font: 3.6rem / 4.2rem $font_1;
+	font: 3.6rem / 4.2rem $pt_sans;
 	text-align: center;
 	color: $black_color;
 }
@@ -359,7 +359,7 @@
 	padding: 0 1.2rem;
 	min-height: 3.8rem;
 
-	font: 2rem / 3.8rem $font_1;
+	font: 2rem / 3.8rem $pt_sans;
 	color: $white_color;
 	text-transform: uppercase;
 
@@ -414,12 +414,12 @@
 }
 
 .hero_cottage__price_label {
-	font: 2.4rem / 2.8rem $font_1;
+	font: 2.4rem / 2.8rem $pt_sans;
 }
 
 .hero_cottage__price_quantity {
 	font-weight: 700;
-	font-family: $font_1;
+	font-family: $pt_sans;
 
 	@include bp($point_4, min) {
 		font-size: 4.8rem;
