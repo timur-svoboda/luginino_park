@@ -72,7 +72,7 @@
 	width: 1.6rem;
 	height: 1.6rem;
 
-	border: 2px solid $white;
+	border: 2px solid $white_color;
 	border-radius: 50%;
 	opacity: .5;
 	cursor: pointer;
@@ -87,7 +87,7 @@
 		height: .6rem;
 
 		border-radius: 50%;
-		background: $white;
+		background: $white_color;
 		opacity: 0;
 
 		transform: translate(-50%, -50%);
@@ -124,7 +124,7 @@
 	width: 5.8rem;
 	height: 2.4rem;
 
-	color: $white;
+	color: $white_color;
 
 	cursor: pointer;
 	
@@ -158,7 +158,7 @@
 		&:hover,
 		&:focus,
 		&:active {
-			color: $white;
+			color: $white_color;
 		}
 	}
 }

@@ -19,7 +19,7 @@
 %button_theme_1 {
 	@extend %transition_background;
 
-	color: $white;
+	color: $white_color;
 
 	background: $orange_color;
 
@@ -36,9 +36,9 @@
 }
 
 %button_theme_2 {
-	color: $white;
+	color: $white_color;
 
-	border-color: $white;
+	border-color: $white_color;
 	border-style: solid;
 
 	transition: color .3s ease, background .3s ease;
@@ -50,13 +50,13 @@
 	&:focus {
 		color: $black_color;
 
-		background: $white;
+		background: $white_color;
 	}
 
 	&:active {
 		color: $orange_color;
 
-		background: $white;
+		background: $white_color;
 	}
 }
 
