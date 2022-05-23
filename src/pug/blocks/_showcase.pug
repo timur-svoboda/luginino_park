@@ -26,7 +26,7 @@
 
 section.section.showcase
 	.section_in
-		h2.title.title--center_mod.showcase__title Коттеджи поселка
+		h2.title.title--align_center.showcase__title Коттеджи поселка
 		ul.showcase__list
 			each preview, preview_index in showcase.previews
 				li.showcase__item
@@ -50,7 +50,7 @@ section.section.showcase
 										+icon('right_arrow', 'icon--size_mod')
 								.preview__meta_button
 									.preview__meta
-										.title.title--size_1_mod.preview__title Коттедж ##{preview.number}
+										.title.title--size_h3.preview__title Коттедж ##{preview.number}
 										ul.preview__feature_list
 											each feature in features
 												li.preview__feature_item

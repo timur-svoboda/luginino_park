@@ -4,20 +4,20 @@
 	text-transform: uppercase;
 	letter-spacing: -.025em;
 
-	&.title--size_1_mod {
+	&.title--size_h3 {
 		font-size: calc(.02 * 100vw + 3.4rem);
 		line-height: 1.2;
 	}
 
-	&.title--white_mod {
+	&.title--theme_white {
 		color: white;
 	}
 
-	&.title--shadow_mod {
+	&.title--shadow {
 		text-shadow: 0 0 4px $black_color;
 	}
 
-	&.title--center_mod {
+	&.title--align_center {
 		text-align: center;
 	}
 }
