@@ -1,0 +1,9 @@
+mixin button(data)
+	- let root_class = data.class || '';
+
+	-	root_class += data.is_link ? ' button--link' : '';
+	- const tag = data.is_link ? 'a' : 'button';
+	- const type = data.is_link ? false : (data.type || 'button');
+	- const href = data.is_link ? (data.href || '#') : false;
+
+	#{tag}.button(class=root_class, type=type, href=href)= data.text

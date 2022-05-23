@@ -30,6 +30,11 @@ section.contact.section
 			p.contact__description= contact.description
 			.contact__buttons
 				.contact__button_wrap
-					button.accent_button(type="button")= contact.buttons.accent
+					+button({
+						text: contact.buttons.accent, 
+					})
 				.contact__button_wrap
-					button.outlined_button(type="button")= contact.buttons.outlined
+					+button({
+						class: 'button--theme_outlined',
+						text: contact.buttons.outlined,
+					})

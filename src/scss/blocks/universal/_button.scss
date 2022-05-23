@@ -1,0 +1,69 @@
+@use 'sass:color';
+
+.button {
+	@extend %transition_background;
+
+	display: block;
+	padding: 0 3.2rem;
+	min-width: 19.4rem;
+	min-height: 5.8rem;
+
+	font: 700 1.8rem / normal $pt_sans;
+	text-transform: uppercase;
+	letter-spacing: .045em;
+	color: $white_color;
+
+	border-radius: 9999rem;
+	background: $orange_color;
+
+	cursor: pointer;
+
+	&:hover {
+		background: color.adjust($orange_color, $lightness: 5%);
+	}
+
+	&:active {
+		background: color.adjust($orange_color, $lightness: -5%);
+	}
+}
+
+.button--link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.button--size_large {
+	min-width: 27.5rem;
+	min-height: 6.5rem;
+	
+	font-size: 2rem;
+}
+
+.button--theme_outlined {
+	border: 2px solid $white_color;
+	background: transparent;
+
+	transition: color .3s ease,
+							border-color .3s ease,
+							background .3s ease;
+	will-change: color, border-color, background;
+
+	&:hover {
+		color: $black_color;
+
+		background: $white_color;
+	}
+
+	&:active {
+		color: $black_color;
+
+		border-color: color.adjust($white_color, $lightness: -15%);
+		background: color.adjust($white_color, $lightness: -15%);
+	}
+}

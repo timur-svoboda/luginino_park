@@ -57,7 +57,10 @@ section.section.showcase
 													.preview__feature_label= feature.label
 													.preview__feature_value= feature.value
 									.preview__button_wrap
-										button.accent_button(type="button") Оставить заявку
+										+button({
+											class: 'button--size_large',
+											text: 'Оставить заявку',
+										})
 							.preview__interior.interiorSwiperContainer
 								.preview__interior_swiper.interiorSwiper
 									.swiper-wrapper

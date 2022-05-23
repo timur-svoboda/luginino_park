@@ -1,5 +1,3 @@
-@use "sass:color";
-
 @mixin st_btn() {
 	display: inline-flex;
 	justify-content: center;
@@ -14,68 +12,4 @@
 		text-decoration: none;
 	}
 
-}
-
-%button_theme_1 {
-	@extend %transition_background;
-
-	color: $white_color;
-
-	background: $orange_color;
-
-	@include st_btn();
-
-	&:hover,
-	&:focus {
-		background: color.adjust($orange_color, $lightness: 5%);
-	}
-
-	&:active {
-		background: color.adjust($orange_color, $lightness: -5%);
-	}
-}
-
-%button_theme_2 {
-	color: $white_color;
-
-	border-color: $white_color;
-	border-style: solid;
-
-	transition: color .3s ease, background .3s ease;
-	will-change: color, background;
-
-	@include st_btn();
-
-	&:hover,
-	&:focus {
-		color: $black_color;
-
-		background: $white_color;
-	}
-
-	&:active {
-		color: $orange_color;
-
-		background: $white_color;
-	}
-}
-
-%button_size_1,
-%button_size_2 {
-	min-width: 21rem;
-	min-height: 5.8rem;
-
-	font-size: 2rem;
-
-	border-radius: 3rem;
-}
-
-%button_size_1 {
-	line-height: 5.8rem;
-}
-
-%button_size_2 {
-	line-height: calc(5.8rem - 2 * 2px);
-
-	border-width: 2px;
 }

@@ -76,4 +76,7 @@ section.section.hero
 						.hero_cottage__price_label стоимость
 						.hero_cottage__price_quantity от 3 млн рублей
 					.hero_cottage__button_wrap
-						button.accent_button.hero_cottage__button(type="button") Выбрать коттедж
+						+button({
+							class: 'hero_cottage__button',
+							text: 'Выбрать коттедж',
+						})

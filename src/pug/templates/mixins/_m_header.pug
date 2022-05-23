@@ -42,8 +42,16 @@ mixin header
 		.header__in
 			a.logo.header__logo(href="#")
 				img.logo__img(src=`${assetsImage}logo.svg`, alt="Логотип")
-			a.outlined_button.header__phone_button(href="tel:+88005553535") 8 800 555 35 35
-			button.accent_button.header__cta_button(type="button") Оставить заявку
+			+button({
+				is_link: true,
+				class: 'button--theme_outlined header__phone_button',
+				href: 'tel:+88005553535',
+				text: '8 800 555 35 35',
+			})
+			+button({
+				class: 'header__cta_button',
+				text: 'Оставить заявку',
+			})
 		.menu_trigger.header__menu_trigger.menuTrigger
 				.menu_trigger__decor
 		.menu
@@ -52,9 +60,16 @@ mixin header
 					.menu__buttons
 						.menu__buttons_in
 							.menu__button
-								a.outlined_button(href="tel:+88005553535") 8 800 555 35 35
+								+button({
+									is_link: true,
+									class: 'button--theme_outlined',
+									href: 'tel:+88005553535',
+									text: '8 800 555 35 35',
+								})
 							.menu__button
-								button.accent_button(type="button") Оставить заявку
+								+button({
+									text: 'Оставить заявку',
+								})
 					nav.main_nav.menu__main_nav
 						.main_nav__column
 							ul.main_nav__list
