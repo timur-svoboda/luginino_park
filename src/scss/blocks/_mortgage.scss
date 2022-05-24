@@ -1,0 +1,23 @@
+.mortgage {
+	background: $gray_color;
+
+	@include bp($point_2, min) {
+		padding: 10.6rem var(--gl-indent) 12.3rem;
+	}
+
+	@include bp($point_3) {
+		padding: 8.4rem var(--gl-indent);
+	}
+}
+
+.mortgage__in {
+	@extend %global_flex_block_column_nowrap_flex-start_center;
+
+	margin: 0 auto;
+	max-width: $page_width;
+}
+
+.mortgage__title {
+	margin-bottom: 6.5rem;
+	max-width: 141.2rem;
+}
