@@ -84,12 +84,11 @@ mixin footer
 										li.links__item
 											a.links__link(href=href)= link.text
 			.footer__bottom
-				each bottom_column in bottom_columns
-					- const tag = bottom_column.is_link ? 'a' : 'div';
-					- const href = bottom_column.is_link ? (bottom_column.href || '#') : false;
-					- const text_class = bottom_column.is_link ? 'footer__bottom_column_text--link' : '';
+				.footer__bottom_columns
+					each bottom_column in bottom_columns
+						- const tag = bottom_column.is_link ? 'a' : 'div';
+						- const href = bottom_column.is_link ? (bottom_column.href || '#') : false;
+						- const text_class = bottom_column.is_link ? 'footer__bottom_column_text--link' : '';
 
-					.footer__bottom_column(class=bottom_column.class)
-						#{tag}.footer__bottom_column_text(class=text_class, href=href)= bottom_column.text
-
-
+						.footer__bottom_column(class=bottom_column.class)
+							#{tag}.footer__bottom_column_text(class=text_class, href=href)= bottom_column.text

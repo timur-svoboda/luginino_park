@@ -59,12 +59,17 @@
 }
 
 .footer__bottom {
-	@extend %global_flex_block_row_wrap_space_between_center;
-	
-	margin: 0 -3rem -3rem 0;
 	padding: 4rem 0;
 	
 	border-top: 1px solid rgba($white_color, .1);
+
+	overflow: hidden;
+}
+
+.footer__bottom_columns {
+	@extend %global_flex_block_row_wrap_space_between_center;
+	
+	margin: 0 -3rem -3rem 0;
 }
 
 .footer__bottom_column {
