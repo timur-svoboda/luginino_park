@@ -1,0 +1,9 @@
+.logo {
+	display: block;
+	width: 8.2rem;
+	height: 5.4rem;
+}
+
+.logo__img {
+	@extend %contain_img;
+}

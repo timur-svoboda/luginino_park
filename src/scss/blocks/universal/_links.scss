@@ -1,0 +1,32 @@
+@use 'sass:color';
+
+.links {
+	overflow: hidden;
+}
+
+.links__list {
+}
+
+.links__item {
+	&:not(:last-child) {
+		margin-bottom: 2.1rem;
+	}
+}
+
+.links__link {
+	font: 1.8rem / 127.8% $pt_sans;
+	letter-spacing: .045em;
+	text-transform: uppercase;
+	color: $white_color;
+
+	transition: color .3s ease;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:hover {
+		color: $orange_color;
+	}
+}

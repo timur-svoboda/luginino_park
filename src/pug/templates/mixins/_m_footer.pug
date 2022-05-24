@@ -1,2 +1,95 @@
+-
+	const link_lists = [
+		[
+			{
+				text: 'Проекты',
+			},
+			{
+				text: 'Акции',
+			},
+			{
+				text: 'Услуги',
+			},
+			{
+				text: 'Ипотека',
+			},
+			{
+				text: 'О нас',
+			},
+			{
+				text: 'Пресс-центр',
+			},
+			{
+				text: 'Контакты',
+			},
+		],
+		[
+			{
+				text: 'КП Середниково Парк',
+			},
+			{
+				text: 'КП Зеленоградский',
+			},
+			{
+				text: 'КП Лугинино',
+			},
+			{
+				text: 'КП Рождествено ',
+			},
+			{
+				text: 'КП Хьюге хаус',
+			},
+		],
+		[
+			{
+				text: '8 800 555 35 35',
+				href: 'tel:88005553535',
+			},
+			{
+				text: 'info@insli.ru',
+				href: 'mailto:info@insli.ru',
+			},
+		],
+	];
+
+	const bottom_columns = [
+		{
+			text: '©Insli Недвижимость',
+		},
+		{
+			class: 'footer__bottom_column--middle',
+			text: 'Политика обработки персональных данных',
+			is_link: true,
+		},
+		{
+			class: 'footer__bottom_column--right',
+			text: 'Разработка сайта — OpenColour',
+		},
+	];
+
 mixin footer
 	footer.footer
+		.footer__in
+			.footer__top
+				.footer__top_columns
+					.footer__top_column.footer__top_column--logo
+						a.logo(href="#")
+							img.logo__img(src=`${assetsImage}logo_without_subtitle.svg`, alt="Luginino park logo")
+					each link_list in link_lists 
+						.footer__top_column
+							nav.links
+								ul.links__list
+									each link in link_list
+										- const href = link.href || '#';
+										li.links__item
+											a.links__link(href=href)= link.text
+			.footer__bottom
+				each bottom_column in bottom_columns
+					- const tag = bottom_column.is_link ? 'a' : 'div';
+					- const href = bottom_column.is_link ? (bottom_column.href || '#') : false;
+					- const text_class = bottom_column.is_link ? 'footer__bottom_column_text--link' : '';
+
+					.footer__bottom_column(class=bottom_column.class)
+						#{tag}.footer__bottom_column_text(class=text_class, href=href)= bottom_column.text
+
+

@@ -1,9 +1,112 @@
 .footer {
+	padding: 0 var(--gl-indent);
 	width: 100%;
 	min-height: var(--height-footer);
 	flex: 0 0 auto;
 
-	font-size: 1rem;
+	background: $gray_color;
+}
 
-	will-change: transform;
+.footer__in {
+	margin: 0 auto;
+	padding-top: 6.8rem;
+	max-width: $page_width;
+
+	border-top: 1px solid rgba($white_color, .1);
+}
+
+.footer__top {
+	@include bp($point_4, min) {
+		margin-bottom: 11.8rem;
+	}
+
+	@include bp($point_4 - 1) {
+		margin-bottom: 7rem;
+	}
+}
+
+.footer__top_columns {
+	margin: 0 -3rem -6rem 0;
+
+	@include bp($point_1, min) {
+		@include flex_block(row, nowrap, flex-start);
+	}
+
+	@include bp($point_1 - 1) {
+		@include flex_block(row, wrap, flex-start);
+	}
+}
+
+.footer__top_column {
+	padding: 0 3rem 6rem 0;
+
+	@include bp($point_1, min) {
+		width: 37rem;
+	}
+
+	@include bp($point_1 - 1, $point_6) {
+		width: 50%;
+	}
+
+	@include bp($point_6 - 1) {
+		width: 100%;
+	}
+
+	&.footer__top_column--logo {
+		padding-top: .6rem;
+		margin-right: auto;
+	}
+}
+
+.footer__bottom {
+	@extend %global_flex_block_row_wrap_space_between_center;
+	
+	margin: 0 -3rem -3rem 0;
+	padding: 4rem 0;
+	
+	border-top: 1px solid rgba($white_color, .1);
+}
+
+.footer__bottom_column {
+	padding: 0 3rem 3rem 0;
+	
+	@include bp($point_2, min) {
+		width: 33.33%;
+	}
+
+	@include bp($point_3) {
+		width: 100%;
+	}
+
+	&.footer__bottom_column--middle {
+		@include bp($point_2, min) {
+			text-align: center;
+		}
+	}
+
+	&.footer__bottom_column--right {
+		@include bp($point_2, min) {
+			text-align: right;
+		}
+	}
+}
+
+.footer__bottom_column_text {
+	font: 1.8rem / 127.8% $pt_sans;
+	letter-spacing: .045em;
+	text-transform: uppercase;
+	color: $white_color;
+
+	&.footer__bottom_column_text--link {
+		transition: color .3s ease;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+
+		&:hover {
+			color: $orange_color;
+		}
+	}
 }
