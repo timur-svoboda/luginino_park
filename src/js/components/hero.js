@@ -1,4 +1,4 @@
-import gsap from 'gsap/all';
+import gsap, { ScrollTrigger } from 'gsap/all';
 import SplitText from '../libs/SplitText.min';
 
 export default function hero() {
@@ -16,6 +16,35 @@ export default function hero() {
 			onComplete: () => {
 				titleSplitedText.revert();
 			},
+		});
+	}
+
+	const $leftCloud = document.querySelector('.leftCloud');
+	const $rightCloud = document.querySelector('.rightCloud');
+
+	if ($leftCloud && $rightCloud) {
+		gsap.registerPlugin(ScrollTrigger);
+
+		const commonOptions = {
+			start: 'top center',
+			end: 'bottom top',
+			scrub: true,
+		};
+
+		ScrollTrigger.create({
+			...commonOptions,
+			trigger: $leftCloud,
+			animation: gsap.to($leftCloud, {
+				x: '-100%',
+			}),
+		});
+
+		ScrollTrigger.create({
+			...commonOptions,
+			trigger: $rightCloud,
+			animation: gsap.to($rightCloud, {
+				x: '100%',
+			}),
 		});
 	}
 
