@@ -1,4 +1,6 @@
 -
+	const hero_title = 'Лугинино<br>Парк';
+
 	const checkboxes = [
 		{
 			mod: 'hero_cottage_checkboxes__item--right_mod',
@@ -22,9 +24,7 @@
 section.section.hero
 	.hero_top
 		.hero_top__main
-			h1.hero_top__title.heroTopTitle
-				p Лугинино
-				p Парк
+			h1.hero_top__title.heroTopTitle!= hero_title
 			.hero_top__arrow_down
 				+icon('angle_arrow_down', 'icon--size_mod')
 	.hero_cloud.hero_cloud--left_mod
