@@ -32,6 +32,9 @@
 }
 
 .hero_top__arrow_down {
+	position: relative;
+	z-index: 1;
+
 	margin: 0 auto;
 	width: 4.4rem;
 	height: 2.2rem;

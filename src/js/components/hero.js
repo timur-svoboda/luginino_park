@@ -1,4 +1,4 @@
-import gsap, { ScrollTrigger } from 'gsap/all';
+import gsap, { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import SplitText from '../libs/SplitText.min';
 
 export default function hero() {
@@ -45,6 +45,22 @@ export default function hero() {
 			animation: gsap.to($rightCloud, {
 				x: '100%',
 			}),
+		});
+	}
+
+	const $arrowDown = document.querySelector('.heroArrowDown');
+	const $heroCottage = document.querySelector('.heroCottage');
+
+	if ($arrowDown && $heroCottage) {
+		gsap.registerPlugin(ScrollToPlugin);
+
+		$arrowDown.addEventListener('click', () => {
+			gsap.to(window, {
+				scrollTo: {
+					y: $heroCottage,
+					offsetY: 100,
+				},
+			});
 		});
 	}
 
