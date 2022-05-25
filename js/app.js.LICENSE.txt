@@ -1,4 +1,44 @@
 /*!
+ * GSAP 3.10.4
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * Observer 3.10.4
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * ScrollToPlugin 3.10.4
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
+ * ScrollTrigger 3.10.4
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2022, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
  * Sizzle CSS Selector Engine v2.2.1
  * http://sizzlejs.com/
  *
@@ -7,6 +47,19 @@
  * http://jquery.org/license
  *
  * Date: 2015-10-17
+ */
+
+/*!
+ * VERSION: 0.5.8
+ * DATE: 2018-02-15
+ * UPDATES AND DOCS AT: http://greensock.com
+ *
+ * @license Copyright (c) 2008-2018, GreenSock. All rights reserved.
+ * SplitText is a Club GreenSock membership benefit; You must have a valid membership to use
+ * this code without violating the terms of use. Visit http://greensock.com/club/ to sign up or get more details.
+ * This work is subject to the software agreement that was issued with your membership.
+ * 
+ * @author: Jack Doyle, jack@greensock.com
  */
 
 /*!
