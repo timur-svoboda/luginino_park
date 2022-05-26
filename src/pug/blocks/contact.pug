@@ -15,17 +15,17 @@
 
 section.contact.section
 	.section_in
-		.contact__person_text
+		.contact__person_text.fadeEl
 			.contact__person_name= contact.person.name
 			.contact__person_description!= contact.person.description
-		.contact__person_img_wrap
+		.contact__person_img_wrap.fadeEl
 			+picture({
 				img: contact.person.img,
 				class: 'contact__picture',
 				img_class: 'contact__img',
 				png: true,
 			})
-		.contact__cta
+		.contact__cta.fadeEl
 			h2.title.title--theme_white.contact__title= contact.title
 			p.contact__description= contact.description
 			+button_group({

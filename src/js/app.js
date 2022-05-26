@@ -12,6 +12,10 @@ import showcase from './components/showcase';
 import otherVillages from './components/otherVillages';
 // ------------------  import components###
 
+// ------------------  import utils
+import animEl from './utils/animEl';
+// ------------------  import utils###
+
 window.jQuery = $;
 window.$ = $;
 
@@ -35,6 +39,7 @@ const readyFunc = () => {
 
 const loadFunc = () => {
 	console.log('page load');
+	animEl();
 
 	header();
 	hero();

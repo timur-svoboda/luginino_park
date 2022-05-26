@@ -72,11 +72,11 @@ mixin footer
 		.footer__in
 			.footer__top
 				.footer__top_columns
-					.footer__top_column.footer__top_column--logo
+					.footer__top_column.footer__top_column--logo.fadeEl
 						a.logo(href="#")
 							img.logo__img(src=`${assetsImage}logo_without_subtitle.svg`, alt="Luginino park logo")
 					each link_list in link_lists 
-						.footer__top_column
+						.footer__top_column.fadeEl
 							nav.links
 								ul.links__list
 									each link in link_list

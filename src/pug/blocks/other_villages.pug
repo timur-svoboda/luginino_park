@@ -10,14 +10,14 @@
 
 section.section.other_villages
 	.section_in
-		.other_villages__top
+		.other_villages__top.fadeEl
 			.title.other_villages__title Другие поселки
 			.other_villages__navigation
 				button.other_villages__navigation_button.otherVillagesSwiperPrev(type="button", aria-label="Предыдущий слайд")
 					+icon('left_arrow', 'icon--size_mod')
 				button.other_villages__navigation_button.otherVillagesSwiperNext(type="button", aria-label="Следующий слайд")
 					+icon('right_arrow', 'icon--size_mod')
-		.other_villages__swiper.otherVillagesSwiper
+		.other_villages__swiper.otherVillagesSwiper.fadeEl
 			.swiper-wrapper.other_villages__swiper_wrapper
 				each slide, i in [...slides, ...slides, ...slides]
 					.swiper-slide.other_villages_slide

@@ -56,37 +56,37 @@ section.features.section
 		.features_top.features__top
 			.features_top__in
 				.features_top__column
-					h2.title.features_top__title= features_top.title
+					h2.title.features_top__title.fadeEl= features_top.title
 				.features_top__column
-					p.features_top__description= features_top.description
+					p.features_top__description.fadeEl= features_top.description
 		.features__list
 			.village_feature.village_feature--left_img_mod.features__item
 				.village_feature__in
 					.village_feature__column.village_feature__column--img_mod
-						.village_feature__img_wrap
+						.village_feature__img_wrap.fadeEl
 							+picture({
 								img: village_features[0].img,
 								class: 'village_feature__picture',
 								img_class: 'village_feature__img',
 							})
 					.village_feature__column.village_feature__column--text_mod
-						.village_feature__text
+						.village_feature__text.fadeEl
 							h3.title.title--size_h3.village_feature__title= village_features[0].title
 							p.village_feature__description= village_features[0].description
 			.village_feature.village_feature--right_img_mod.features__item
 				.village_feature__in
 					.village_feature__column.village_feature__column--text_mod
-						.village_feature__text
+						.village_feature__text.fadeEl
 							h3.title.title--size_h3.village_feature__title= village_features[1].title
 							p.village_feature__description= village_features[1].description
 					.village_feature__column.village_feature__column--img_mod
-						.village_feature__img_wrap
+						.village_feature__img_wrap.fadeEl
 							+picture({
 								img: village_features[1].img,
 								class: 'village_feature__picture',
 								img_class: 'village_feature__img',
 							})
-		.features_info
+		.features_info.fadeEl
 			h3.title.title--size_h3.features_info__title= features_info.title
 			.features_info__table
 				each column in features_info.columns

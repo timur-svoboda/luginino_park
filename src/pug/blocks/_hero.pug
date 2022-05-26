@@ -52,7 +52,7 @@ section.section.hero
 			.hero_cottage_checkboxes.heroCheckboxContainer(role="group")
 				each checkbox in checkboxes
 					- const item_mod = checkbox.mod || '';
-					.hero_cottage_checkboxes__item.heroCheckbox(class=item_mod)
+					.hero_cottage_checkboxes__item.heroCheckbox.fadeEl(class=item_mod)
 						.hero_cottage_checkboxes__item_button.heroCheckboxButton(role="checkbox", aria-checked="false")
 							.hero_cottage_checkboxes__item_sign
 						.hero_cottage_checkboxes__item_popup
@@ -64,7 +64,7 @@ section.section.hero
 								})
 							.hero_cottage_checkboxes__item_text= checkbox.text
 		.hero_cottage__meta
-			.hero_cottage__meta_in
+			.hero_cottage__meta_in.fadeEl
 				.hero_cottage__tags_wrap
 					.hero_cottage__tags
 						.hero_cottage__tag_wrap
